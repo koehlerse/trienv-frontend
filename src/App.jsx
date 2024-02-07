@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 
-function App() {
+function App(props) {
   return (
     <div>
-      <p>Hallo </p>
+      {props.children}
     </div>
+    
   );
 }
 
