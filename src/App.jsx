@@ -2,7 +2,7 @@ import Header from "./components/Header";
 
 function App(props) {
   return (
-    <div class="grid grid-cols-4 gap-10 my- bg-black min-h-screen">
+    <div class="min-h-screen bg-trienv-background-500">
       <Header></Header>
       {props.children}
     </div>
