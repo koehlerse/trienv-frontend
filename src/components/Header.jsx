@@ -2,7 +2,7 @@ import { A } from "@solidjs/router";
 
 export default function Header() {
   return (
-    <div class="bg-trienv-navbar-600 h-screen fixed flex-col gap-4">
+    <div class="bg-trienv-navbar-600 h-screen fixed flex flex-col justify-around">
       <A href="/" class="bg-navbar-icon-background-200">
         <svg
           xmlns="http://www.w3.org/2000/svg"
