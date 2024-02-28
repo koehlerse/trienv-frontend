@@ -4,6 +4,10 @@ import { Router, Route } from '@solidjs/router';
 import App from './App';
 import "./index.css"
 import Home from './Home';
+import Profile from './Profile';
+import Browser from './Browser';
+import Settings from './Settings';
+import login from './login';
 const root = document.getElementById('root');
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
@@ -16,6 +20,10 @@ render(
   () => (
     <Router root={App}>
        <Route path="/" component={Home} />
+       <Route path="/profile" component={Profile} />
+       <Route path="/browser" component={Browser} />
+       <Route path="/settings" component={Settings} />
+       <Route path="/login" component={login} />
     </Router>
   ),
   root
