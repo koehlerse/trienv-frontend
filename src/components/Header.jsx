@@ -2,15 +2,15 @@ import { A } from "@solidjs/router";
 
 export default function Header() {
   return (
-    <div class="bg-trienv-navbar-600 h-screen fixed flex flex-col justify-around">
-      <A href="/" class="bg-navbar-icon-background-200">
+    <div class="bg-trienv-navbar-600 h-screen fixed flex flex-col justify-around items-center w-28"> 
+      <A href="/" class=" p-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-12 h-12"
+          class="w-16 h-16"
         >
           <path
             stroke-linecap="round"
@@ -20,30 +20,14 @@ export default function Header() {
         </svg>
       </A>
 
-      <A href="/Profile" class="bg-navbar-icon-background-200">
+      <A href="/Browser" class=" p-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-12 h-12"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-          />
-        </svg>
-      </A>
-      <A href="/Browser" class="bg-navbar-icon-background-200">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-12 h-12"
+          class="w-16 h-16"
         >
           <path
             stroke-linecap="round"
@@ -53,14 +37,31 @@ export default function Header() {
         </svg>
       </A>
 
-      <A href="/Settings" class="bg-navbar-icon-background-200">
+      <A href="/Profile" class=" p-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-12 h-12"
+          class="w-16 h-16"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+          />
+        </svg>
+      </A>
+
+      <A href="/Settings" class=" p-1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-16 h-16"
         >
           <path
             stroke-linecap="round"
