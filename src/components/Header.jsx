@@ -20,7 +20,7 @@ export default function Header() {
         </svg>
       </A>
 
-      <A href="/Browser" class=" p-1">
+      <A href="/browser" class=" p-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -37,7 +37,7 @@ export default function Header() {
         </svg>
       </A>
 
-      <A href="/Profile" class=" p-1">
+      <A href="/profile" class=" p-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -54,7 +54,7 @@ export default function Header() {
         </svg>
       </A>
 
-      <A href="/Settings" class=" p-1">
+      <A href="/settings" class=" p-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

@@ -9,7 +9,6 @@ import Browser from "./pages/Browser";
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration"; 
-import { UserContextProvider } from "./context/UserContext";
 const root = document.getElementById("root");
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
@@ -22,14 +21,12 @@ render(
   () => (
     
     <Router root={App}>
-      <UserContextProvider>
         <Route path="/" component={Home} />
         <Route path="/profile" component={Profile} />
         <Route path="/browser" component={Browser} />
         <Route path="/settings" component={Settings} />
         <Route path="/login" component={Login} />
         <Route path="/registration" component={Registration} />
-      </UserContextProvider>
     </Router>
     
   ),
