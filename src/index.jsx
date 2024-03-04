@@ -7,8 +7,8 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Browser from "./pages/Browser";
 import Settings from "./pages/Settings";
-import Login from "./pages/Login";
-import Registration from "./pages/Registration"; 
+import LoginPage from "./pages/LoginPage"; 
+import RegisterPage from "./pages/RegisterPage";
 const root = document.getElementById("root");
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
@@ -25,8 +25,8 @@ render(
         <Route path="/profile" component={Profile} />
         <Route path="/browser" component={Browser} />
         <Route path="/settings" component={Settings} />
-        <Route path="/login" component={Login} />
-        <Route path="/registration" component={Registration} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/register" component={RegisterPage} />
     </Router>
     
   ),
