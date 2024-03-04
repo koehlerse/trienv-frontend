@@ -1,6 +1,6 @@
 import Register from "../components/Register";
 
-function Registration() {
+function RegisterPage() {
     
     return (
         <div class="">
@@ -8,4 +8,4 @@ function Registration() {
         </div>
     );
 }
-export default Registration;
+export default RegisterPage;
