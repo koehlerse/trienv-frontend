@@ -60,7 +60,7 @@ export default function Login() {
           <span class="text-red-500 bg-white p-1 rounded-md">{error()}</span>
         )}
         <button
-          class="w-full p-2.5 mt-2 bg-blue_2-500 text-white border-none rounded-sm curser-pointer"
+          class="w-full p-2.5 mt-2 bg-gradient-to-tr from-trienv-light-blue-300 via-trienv-blue-500 to-trienv-blue-700 hover:bg-gradient-to-br text-white border-none rounded-sm curser-pointer"
           onClick={login}
         >
           Anmelden

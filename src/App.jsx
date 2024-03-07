@@ -32,10 +32,10 @@ function App(props) {
   }, { once: true }) 
 
   return (
-    <div class="min-h-screen bg-trienv-background-500">
+    <div class="min-h-screen">
       <UserContext.Provider value={[user, setUser]}>
         <Header />
-        <img class="w-48 ml-28 absolute" src="/trienv_logo.svg" alt="Logo" />
+        
         <div>{props.children}</div>
       </UserContext.Provider>
     </div>
