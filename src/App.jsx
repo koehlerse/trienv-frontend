@@ -8,21 +8,26 @@ import { api } from "./utilities/api";
 function App(props) {
   const [user, setUser] = createStore([
     {
-      id: 1,
+      user_id: 1,
       email: "",
       username: "",
       tag: "",
       image: "",
+      bg_color: "",
       admin: 0,
-      createdAt: "",
-      updatedAt: ""
+      created_at: "",
+      updated_at: ""
     }
-  ])
+  ]);
 
   async function getUser() {
-    const response = await api.get('/user/me');
-    const data = response.data;
-    return data;
+    try {
+      const response = await api.get('/user/me');
+      const data = response.data;
+      return data;
+    } catch (err) {
+      return null;
+    }
   }
 
   createEffect(() => {
