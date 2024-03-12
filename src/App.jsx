@@ -45,7 +45,6 @@ function App(props) {
     <div class="min-h-screen">
       <UserContext.Provider value={[user, setUser]}>
         <Header />
-        
         <div>{props.children}</div>
       </UserContext.Provider>
     </div>

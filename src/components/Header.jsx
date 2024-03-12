@@ -2,8 +2,8 @@ import { A } from "@solidjs/router";
 
 export default function Header() {
   return (
-    <div class="fixed shadow-xl border-2 border-trienv-shade-100 h-screen flex flex-col justify-around items-center w-28">
-      <A href="/" class="p-2 m-1 rounded-md">
+    <div class="fixed shadow-xl border-2 bg-white border-trienv-shade-100 h-screen flex flex-col justify-around items-center w-24">
+      <A href="/" class="p-1 m-1 rounded-md">
         <img src="/trienv_compact.svg" alt="Logo" />
       </A>
 
@@ -14,7 +14,7 @@ export default function Header() {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-14 h-14"
+          class="w-14 h-14 hover:bg-trienv-blue-500 transition-colors duration-200 ease-in-out rounded-full p-1"
         >
           <path
             stroke-linecap="round"
@@ -24,14 +24,14 @@ export default function Header() {
         </svg>
       </A>
 
-      <A href="/profile" class=" p-1 text-trienv-shade-950">
+      <A href="/profile" class="p-1 text-trienv-shade-950">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-14 h-14"
+          class="w-14 h-14 hover:bg-trienv-blue-500 transition-colors duration-200 ease-in-out rounded-full p-1"
         >
           <path
             stroke-linecap="round"
@@ -48,7 +48,7 @@ export default function Header() {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-14 h-14"
+          class="w-14 h-14 hover:bg-trienv-blue-500 transition-colors duration-200 ease-in-out rounded-full p-1"
         >
           <path
             stroke-linecap="round"
