@@ -4,6 +4,7 @@ import { createEffect } from "solid-js";
 import { createStore } from "solid-js/store";
 import { UserContext } from "./context/UserContext";
 import { api } from "./utilities/api";
+import { checkUser } from "./utilities/checkUser";
 
 function App(props) {
   const [user, setUser] = createStore([
@@ -31,6 +32,10 @@ function App(props) {
   }
 
   createEffect(() => {
+    if (!checkUser()) { 
+      setUser({});
+      return; 
+    }
     getUser().then((user) => {
       console.log(user);
     })
