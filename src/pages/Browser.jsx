@@ -1,5 +1,4 @@
 import Content from "../components/Content";
-
 function Browser() {
   return (
     <div class="min-h-screen">

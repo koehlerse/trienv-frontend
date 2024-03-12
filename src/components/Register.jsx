@@ -35,12 +35,22 @@ export default function Register() {
 
   return (
     <div class="h-screen w-screen justify-center items-center flex">
-      <div class="w-72 p-5 border-2 border-black border-solid rounded-md shadow-md shadow-black">
-        <h3 class="mb-5 text-center">Registrieren</h3>
+      <div class="w-72 p-5 border border-trienv-shade-500 border-solid rounded-md shadow-md shadow-trienv-shade-500">
+        <h3 class="mb-5 text-center text-2xl">Registrieren</h3>
+        <div class="mb-4">
+          <label class="mb-1.5 block">Benutzername</label>
+          <input
+            class="w-full p-2 border border-black border-solid rounded-sm"
+            type="text"
+            name="username"
+            onChange={(e) => setUser({ ...user, username: e.target.value })}
+            required
+          />
+        </div>
         <div class="mb-4">
           <label class="mb-1.5 block">Email</label>
           <input
-            class="w-full p-2 border-2 border-black border-solid rounded-sm"
+            class="w-full p-2 border border-black border-solid rounded-sm"
             type="email"
             name="email"
             onChange={(e) => setUser({ ...user, email: e.target.value })}
@@ -50,20 +60,10 @@ export default function Register() {
         <div class="mb-4">
           <label class="mb-1.5 block">Passwort</label>
           <input
-            class="w-full p-2 border-2 border-black border-solid rounded-sm"
+            class="w-full p-2 border border-black border-solid rounded-sm"
             type="password"
             name="password"
             onChange={(e) => setUser({ ...user, password: e.target.value })}
-            required
-          />
-        </div>
-        <div class="mb-4">
-          <label class="mb-1.5 block">Benutzername</label>
-          <input
-            class="w-full p-2 border-2 border-black border-solid rounded-sm"
-            type="text"
-            name="username"
-            onChange={(e) => setUser({ ...user, username: e.target.value })}
             required
           />
         </div>
@@ -74,7 +74,7 @@ export default function Register() {
         )}
 
         <button
-          class="w-full p-2.5 mt-2 bg-blue_2-500 text-white border-none rounded-sm curser-pointer"
+          class="w-full p-2.5 mt-2 mb-2 bg-trienv-blue-600 hover:bg-trienv-light-blue-700 transition-colors text-white border-none rounded-md curser-pointer"
           onClick={register}
         >
           Registrieren
