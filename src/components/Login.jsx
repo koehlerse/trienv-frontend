@@ -2,6 +2,7 @@ import { A, useNavigate } from "@solidjs/router";
 import { createSignal } from "solid-js";
 import { createStore } from "solid-js/store";
 import { api } from "../utilities/api";
+import jsCookie from "js-cookie";
 
 export default function Login() {
   const router = useNavigate();
@@ -21,13 +22,17 @@ export default function Login() {
 
     const userData = new URLSearchParams(user);
 
-    const reponse = await api.post('/auth/signin', userData);
+    const res = await api.post('/auth/signin', userData);
 
-    if (reponse.status == 403) {
-      setError("Email oder Password falsch!");
+    if (res.status == 403) {
+      setError("Email oder Password falsch.");
       return;
     }
-    
+
+    const data = res.data;
+
+    jsCookie.set("trienv_refresh_token", data["refresh_token"], { sameSite: "strict", expires: 7 });
+    jsCookie.set("trienv_access_token", data["access_token"] , { sameSite: "strict", expires: 7 });
 
     router("/");
   }
