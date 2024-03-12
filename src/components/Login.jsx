@@ -1,26 +1,30 @@
 import { A, useNavigate } from "@solidjs/router";
-import { createSignal } from "solid-js";
+import { createSignal, useContext } from "solid-js";
 import { createStore } from "solid-js/store";
 import { api } from "../utilities/api";
 import jsCookie from "js-cookie";
+import { UserContext } from "../context/UserContext";
+import { getUser } from "../utilities/getUser";
 
 export default function Login() {
   const router = useNavigate();
 
   const [error, setError] = createSignal(null);
 
-  const [user, setUser] = createStore({
+  const [userInput, setUserInput] = createStore({
     email: "",
     password: "",
   });
 
+  const [user, setUser] = useContext(UserContext);
+
   async function login() {
-    if (user.email === "" || user.password === "") {
+    if (userInput.email === "" || userInput.password === "") {
       setError("Bitte füllen Sie alle Felder aus!");
       return;
     }
 
-    const userData = new URLSearchParams(user);
+    const userData = new URLSearchParams(userInput);
 
     const res = await api.post('/auth/signin', userData);
 
@@ -34,7 +38,9 @@ export default function Login() {
     jsCookie.set("trienv_refresh_token", data["refresh_token"], { sameSite: "strict", expires: 7 });
     jsCookie.set("trienv_access_token", data["access_token"] , { sameSite: "strict", expires: 7 });
 
-    router("/");
+    setUser(await getUser());
+
+    router("/browser");
   }
 
   return (
@@ -47,7 +53,7 @@ export default function Login() {
             class="w-full p-2 border border-black border-solid rounded-sm"
             type="email"
             name="email"
-            onChange={(e) => setUser({ ...user, email: e.target.value })}
+            onChange={(e) => setUserInput({ ...user, email: e.target.value })}
             required
           />
         </div>
@@ -57,7 +63,7 @@ export default function Login() {
             class="w-full p-2 border border-black border-solid rounded-sm"
             type="password"
             name="password"
-            onChange={(e) => setUser({ ...user, password: e.target.value })}
+            onChange={(e) => setUserInput({ ...user, password: e.target.value })}
             required
           />
         </div>

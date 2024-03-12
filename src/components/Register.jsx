@@ -3,6 +3,7 @@ import { A, useNavigate } from "@solidjs/router";
 import { createStore } from "solid-js/store";
 import { createSignal } from "solid-js";
 import { api } from "../utilities/api";
+
 export default function Register() {
   const router = useNavigate();
 
@@ -16,7 +17,7 @@ export default function Register() {
 
   async function register() {
     if (user.email === "" || user.password === "" || user.username === "") {
-      setError("Bitte füllen Sie alle Felder aus!");
+      setError("Bitte füllen Sie alle Felder aus.");
       return;
     }
 

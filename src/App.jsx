@@ -1,13 +1,12 @@
 import Header from "./components/Header";
 import { createEffect } from "solid-js";
-
+import { getUser } from "./utilities/getUser";
 import { createStore } from "solid-js/store";
 import { UserContext } from "./context/UserContext";
-import { api } from "./utilities/api";
 import { checkUser } from "./utilities/checkUser";
 
 function App(props) {
-  const [user, setUser] = createStore([
+  const [user, setUser] = createStore(
     {
       user_id: 1,
       email: "",
@@ -19,17 +18,7 @@ function App(props) {
       created_at: "",
       updated_at: ""
     }
-  ]);
-
-  async function getUser() {
-    try {
-      const response = await api.get('/user/me');
-      const data = response.data;
-      return data;
-    } catch (err) {
-      return null;
-    }
-  }
+  );
 
   createEffect(() => {
     if (!checkUser()) { 
@@ -37,7 +26,7 @@ function App(props) {
       return; 
     }
     getUser().then((user) => {
-      console.log(user);
+      setUser(user);
     })
   }, { once: true }) 
 

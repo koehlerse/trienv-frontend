@@ -1,8 +1,18 @@
+import { createEffect } from "solid-js";
+import { checkUser } from "../utilities/checkUser";
+import { useNavigate } from "@solidjs/router";
 import ChangeBackgroundColor from "../components/ChangeBackgroundColor";
 import ChangeName from "../components/ChangeName"
 import { createSignal } from "solid-js";
 function Settings() {
+    const router = useNavigate();
 
+    createEffect(() => {
+        if (!checkUser()) {
+            router("/login");
+        }
+    }, { once: true });
+  
     const [showChangeName, setShowChangeName] = createSignal(false);
     const [showChangeBackground, setShowChangeBackground] = createSignal(false);
 
@@ -21,4 +31,4 @@ function Settings() {
     )
 } 
 
-export default Settings
+export default Settings;

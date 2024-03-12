@@ -46,6 +46,7 @@ api.interceptors.response.use((res) => {
         if (err.response.status === 401 && !originalReq._retry) {
             originalReq._retry = true;
             const accessToken = await refreshToken();
+            jsCookie.set("trienv_access_token", accessToken);
             axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
             return api(originalReq);
         }
