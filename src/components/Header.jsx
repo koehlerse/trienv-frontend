@@ -2,12 +2,12 @@ import { A } from "@solidjs/router";
 
 export default function Header() {
   return (
-    <div class="fixed shadow-xl border-2 bg-white border-trienv-shade-100 h-screen flex flex-col justify-around items-center w-24">
-      <A href="/" class="p-1 m-1 rounded-md">
+    <div class="fixed shadow-xl border-r-2 bg-white border-trienv-shade-100 h-screen flex flex-col justify-around items-center w-24">
+      <A href="/" class="p-2 m-1 rounded-md mb-auto">
         <img src="/trienv_compact.svg" alt="Logo" />
       </A>
 
-      <A href="/browser" class="p-1 text-trienv-shade-950 bg-clip-text">
+      <A href="/browser" class="p-1 text-trienv-shade-950 bg-clip-text mb-auto">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -24,7 +24,7 @@ export default function Header() {
         </svg>
       </A>
 
-      <A href="/profile" class="p-1 text-trienv-shade-950">
+      <A href="/profile" class="p-1 text-trienv-shade-950 mb-auto">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -41,7 +41,7 @@ export default function Header() {
         </svg>
       </A>
 
-      <A href="/settings" class="p-1 text-trienv-shade-950">
+      <A href="/settings" class="p-1 text-trienv-shade-950 mb-auto">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
