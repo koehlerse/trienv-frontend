@@ -39,12 +39,12 @@ export default function Login() {
 
   return (
     <div class="h-screen w-screen justify-center items-center flex">
-      <div class="w-72 p-5 border-2 border-black border-solid rounded-md shadow-md shadow-black">
-        <h3 class="mb-5 text-center">Anmelden</h3>
+      <div class="w-72 p-5 border border-trienv-shade-500 border-solid rounded-md shadow shadow-trienv-shade-500 ">
+        <h1 class="mb-5 text-center text-2xl">Anmelden</h1>
         <div class="mb-4">
           <label class="mb-1.5 block">Email</label>
           <input
-            class="w-full p-2 border-2 border-black border-solid rounded-sm"
+            class="w-full p-2 border border-black border-solid rounded-sm"
             type="email"
             name="email"
             onChange={(e) => setUser({ ...user, email: e.target.value })}
@@ -52,9 +52,9 @@ export default function Login() {
           />
         </div>
         <div class="mb-4">
-          <label class="mb-1,5 block">Password</label>
+          <label class="mb-1.5 block">Password</label>
           <input
-            class="w-full p-2 border-2 border-black border-solid rounded-sm"
+            class="w-full p-2 border border-black border-solid rounded-sm"
             type="password"
             name="password"
             onChange={(e) => setUser({ ...user, password: e.target.value })}
@@ -65,7 +65,7 @@ export default function Login() {
           <span class="text-red-500 bg-white p-1 rounded-md">{error()}</span>
         )}
         <button
-          class="w-full p-2.5 mt-2 bg-gradient-to-tr from-trienv-light-blue-300 via-trienv-blue-500 to-trienv-blue-700 hover:bg-gradient-to-br text-white border-none rounded-sm curser-pointer"
+          class="w-full p-2.5 mt-2 mb-2 bg-trienv-blue-600 hover:bg-trienv-light-blue-700 transition-colors text-white border-none rounded-md curser-pointer"
           onClick={login}
         >
           Anmelden
