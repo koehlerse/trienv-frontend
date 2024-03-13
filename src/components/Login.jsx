@@ -13,7 +13,7 @@ export default function Login() {
   const [email, setEmail] = createSignal("");
   const [password, setPassword] = createSignal("");
 
-  const [setUser] = useContext(UserContext);
+  const [user, setUser] = useContext(UserContext);
 
   async function login() {
     if (email() === "" || password() === "") {

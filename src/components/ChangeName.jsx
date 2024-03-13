@@ -3,7 +3,8 @@ import { createSignal } from "solid-js";
 import { api } from "../utilities/api";
 export default function ChangeName() {
 
-    const [error, setError] = createSignal(null);
+    const [error, setError] = createSignal("");
+    const [success, setSuccess] = createSignal("");
 
     const [username, setUsername] = createStore({
         name: "",
@@ -19,6 +20,8 @@ export default function ChangeName() {
         userData.append("new_username", username.name);
         userData.append("new_tag", username.tag);
         await api.patch('/user/username', userData);
+        setSuccess("Name und Tag geändert.");
+        setError("");
     }
 
     return (
@@ -32,6 +35,9 @@ export default function ChangeName() {
                 </div>
                 {error() && (
                     <span class="text-red-500 bg-white p-1 rounded-md">{error()}</span>
+                )}
+                {success() && (
+                    <span class="text-green-500 bg-white p-1 rounded-md">{success()}</span>
                 )}
                 <button onClick={changeName} class="w-full p-2.5 mt-2 mb-2 trienv-button">Speichern</button>
             </div>
