@@ -26,7 +26,7 @@ export default function ChangeBackgroundColor() {
                 {error() && (
                     <span class="text-red-500 bg-white p-1 rounded-md">{error()}</span>
                 )}
-                <button onClick={changeBackground} class="w-full p-2.5 mt-2 mb-2 bg-trienv-blue-600 hover:bg-trienv-light-blue-700 transition-colors text-white border-none rounded-md curser-pointer">Speichern</button>
+                <button onClick={changeBackground} class="w-full p-2.5 mt-2 mb-2 trienv-button">Speichern</button>
             </div>
         </div>
     );

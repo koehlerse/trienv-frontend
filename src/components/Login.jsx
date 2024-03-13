@@ -1,6 +1,5 @@
 import { A, useNavigate } from "@solidjs/router";
 import { createSignal, useContext } from "solid-js";
-import { createStore } from "solid-js/store";
 import { api } from "../utilities/api";
 import jsCookie from "js-cookie";
 import { UserContext } from "../context/UserContext";
@@ -11,21 +10,20 @@ export default function Login() {
 
   const [error, setError] = createSignal(null);
 
-  const [userInput, setUserInput] = createStore({
-    email: "",
-    password: "",
-  });
+  const [email, setEmail] = createSignal("");
+  const [password, setPassword] = createSignal("");
 
-  const [user, setUser] = useContext(UserContext);
+  const [setUser] = useContext(UserContext);
 
   async function login() {
-    console.log(userInput)
-    if (userInput.email === "" || userInput.password === "") {
+    if (email() === "" || password() === "") {
       setError("Bitte füllen Sie alle Felder aus!");
       return;
     }
 
-    const userData = new URLSearchParams(userInput);
+    const userData = new URLSearchParams();
+    userData.append("email", email());
+    userData.append("password", password());
 
     const res = await api.post('/auth/signin', userData);
 
@@ -54,7 +52,7 @@ export default function Login() {
             class="w-full p-2 border border-black border-solid rounded-sm"
             type="email"
             name="email"
-            onChange={(e) => setUserInput({ ...user, email: e.target.value })}
+            onInput={(e) => setEmail(e.target.value)}
             required
           />
         </div>
@@ -64,7 +62,7 @@ export default function Login() {
             class="w-full p-2 border border-black border-solid rounded-sm"
             type="password"
             name="password"
-            onChange={(e) => setUserInput({ ...user, password: e.target.value })}
+            onInput={(e) => setPassword(e.target.value)}
             required
           />
         </div>
@@ -72,7 +70,7 @@ export default function Login() {
           <span class="text-red-500 bg-white p-1 rounded-md">{error()}</span>
         )}
         <button
-          class="w-full p-2.5 mt-2 mb-2 bg-trienv-blue-600 hover:bg-trienv-light-blue-700 transition-colors text-white border-none rounded-md curser-pointer"
+          class="w-full p-2.5 mt-2 mb-2 trienv-button"
           onClick={login}
         >
           Anmelden

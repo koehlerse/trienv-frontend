@@ -109,7 +109,7 @@ function Profile() {
               <p>{user.username + " #" + user.tag} </p>
               <p>E-Mail: {user.email} </p>
               <p>Account erstellt am {new Date(user.created_at).toLocaleDateString("de")}</p>
-              <button class="bg-trienv-blue-400 font-medium p-1 mt-2 rounded-lg hover:bg-trienv-blue-500 hover:text-white transition-colors duration-300 ease-in-out"
+              <button class="p-1 mt-2 trienv-button"
                 onClick={() => {
                   jsCookie.remove("trienv_refresh_token");
                   jsCookie.remove("trienv_access_token");
@@ -124,7 +124,7 @@ function Profile() {
           </div>
           <h1 class="font-semibold text-4xl pt-8">Szenen</h1>
           <button
-            class="bg-trienv-blue-400 font-medium p-1.5 mt-2 mb-4 rounded-lg hover:bg-trienv-blue-500 hover:text-white transition-colors duration-300 ease-in-out"
+            class="p-1.5 mt-2 mb-4 trienv-button"
             onClick={() => setOpen(true)}
           >
             Szene hinzufügen
