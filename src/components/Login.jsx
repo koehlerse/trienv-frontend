@@ -19,6 +19,7 @@ export default function Login() {
   const [user, setUser] = useContext(UserContext);
 
   async function login() {
+    console.log(userInput)
     if (userInput.email === "" || userInput.password === "") {
       setError("Bitte füllen Sie alle Felder aus!");
       return;

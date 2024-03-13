@@ -8,6 +8,7 @@ import { api } from "../utilities/api";
 import { createStore } from "solid-js/store";
 import clsx from "clsx";
 import jsCookie from "js-cookie";
+import { getUser } from "../utilities/getUser";
 
 function Profile() {
 
@@ -87,6 +88,7 @@ function Profile() {
     if (!checkUser()) {
       router("/login");
     }
+    getUser().then((user) => setUser(user));
   }, { once: true });
 
   const [user, setUser] = useContext(UserContext);
@@ -96,9 +98,11 @@ function Profile() {
         <div class="px-8 py-4">
           <h1 class="font-semibold text-4xl">Profil</h1>
           <div class="w-full pt-8 flex items-center justify-center">
-            <div class="bg-white border-trienv-shade-100 shadow-lg border-2 rounded-lg p-1.5 w-fit flex flex-col items-center">
+            <div class={clsx("border-trienv-shade-100 shadow-lg border-2 rounded-lg p-1.5 w-fit flex flex-col items-center")}
+              style={{"background-color": user.bg_color}}
+            >
               {user.image ?
-                <img src={user.image} alt="UserProfileIcon" />
+                <img src={user.image} alt="UserProfileIcon" class="w-48 h-48" />
                 :
                 <img src="/unknown_user.svg" alt="UserProfileIcon" class="w-48 h-48"/>
               }
