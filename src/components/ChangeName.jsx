@@ -12,7 +12,7 @@ export default function ChangeName() {
 
     async function changeName() {
         if (username.name === "" || username.tag === "") {
-            setError("Bitte alle Felder ausfüllen!!");
+            setError("Bitte alle Felder ausfüllen.");
         }
 
         const userData = new URLSearchParams();

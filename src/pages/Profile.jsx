@@ -30,8 +30,7 @@ function Profile() {
   async function getProfileScenes() {
     try {
       const res = await api.get("/scenes/all");
-      console.log(res.data.scenes)
-      return res.data
+      return res.data;
     } catch (err) {
       return null;
     }
@@ -45,7 +44,7 @@ function Profile() {
       droppedIconFiles().length <= 0 ||
       droppedBannerFiles().length <= 0
     ) {
-      setError("Alle Felder müssen gefüllt sein.")
+      setError("Alle Felder müssen gefüllt sein.");
       return;
     }
 
@@ -102,7 +101,7 @@ function Profile() {
               style={{"background-color": user.bg_color}}
             >
               {user.image ?
-                <img src={user.image} alt="UserProfileIcon" class="w-48 h-48" />
+                <img src={user.image} alt="UserProfileIcon" class="w-48 h-48 rounded-full" />
                 :
                 <img src="/unknown_user.svg" alt="UserProfileIcon" class="w-48 h-48"/>
               }
