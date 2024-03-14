@@ -75,7 +75,7 @@ export default function Register() {
         )}
 
         <button
-          class="w-full p-2.5 mt-2 mb-2 bg-trienv-blue-600 hover:bg-trienv-light-blue-700 transition-colors text-white border-none rounded-md curser-pointer"
+          class="w-full p-2.5 mt-2 mb-2 trienv-button"
           onClick={register}
         >
           Registrieren

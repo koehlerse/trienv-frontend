@@ -30,8 +30,7 @@ function Profile() {
   async function getProfileScenes() {
     try {
       const res = await api.get("/scenes/all");
-      console.log(res.data.scenes)
-      return res.data
+      return res.data;
     } catch (err) {
       return null;
     }
@@ -45,7 +44,7 @@ function Profile() {
       droppedIconFiles().length <= 0 ||
       droppedBannerFiles().length <= 0
     ) {
-      setError("Alle Felder müssen gefüllt sein.")
+      setError("Alle Felder müssen gefüllt sein.");
       return;
     }
 
@@ -102,14 +101,14 @@ function Profile() {
               style={{"background-color": user.bg_color}}
             >
               {user.image ?
-                <img src={user.image} alt="UserProfileIcon" class="w-48 h-48" />
+                <img src={user.image} alt="UserProfileIcon" class="w-48 h-48 rounded-full" />
                 :
                 <img src="/unknown_user.svg" alt="UserProfileIcon" class="w-48 h-48"/>
               }
               <p>{user.username + " #" + user.tag} </p>
               <p>E-Mail: {user.email} </p>
               <p>Account erstellt am {new Date(user.created_at).toLocaleDateString("de")}</p>
-              <button class="bg-trienv-blue-400 font-medium p-1 mt-2 rounded-lg hover:bg-trienv-blue-500 hover:text-white transition-colors duration-300 ease-in-out"
+              <button class="p-1 mt-2 trienv-button"
                 onClick={() => {
                   jsCookie.remove("trienv_refresh_token");
                   jsCookie.remove("trienv_access_token");
@@ -124,7 +123,7 @@ function Profile() {
           </div>
           <h1 class="font-semibold text-4xl pt-8">Szenen</h1>
           <button
-            class="bg-trienv-blue-400 font-medium p-1.5 mt-2 mb-4 rounded-lg hover:bg-trienv-blue-500 hover:text-white transition-colors duration-300 ease-in-out"
+            class="p-1.5 mt-2 mb-4 trienv-button"
             onClick={() => setOpen(true)}
           >
             Szene hinzufügen
